@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="admin.css">
+
+  <script>
+    window.onload = function() {
+      let password = prompt("Enter Admin Password:");
+      const correctPassword = "admin123";
+
+      if (password !== correctPassword) {
+        alert("Incorrect Password! Redirecting...");
+        window.location.href = "index.html";
+      }
+    };
+  </script>
+</head>
+<body>
+<div class="container">
+  <button id="logout-btn" onclick="logout()">Logout</button>
+  <h1>Admin Panel</h1>
+  <form id="question-form">
+    <label>Enter New Question :</label>
+    <input type="text" id="question" required><br><hr>
+    <label>A:</label> <input type="text" id="option1" required><br>
+    <label>B:</label> <input type="text" id="option2" required><br>
+    <label>C:</label> <input type="text" id="option3" required><br>
+    <label>D:</label> <input type="text" id="option4" required><br><hr>
+    <label>Select Correct Answer :</label>
+    <select id="answer">
+      <option value="1">A</option>
+      <option value="2">B</option>
+      <option value="3">C</option>
+      <option value="4">D</option>
+    </select><br><hr>
+    <button type="submit">Add</button>
+  </form>
+
+  <h2>Leaderboard Management</h2>
+  <button onclick="clearLeaderboard()">Clear Leaderboard</button>
+
+  <h2>Questions List</h2>
+  <ul id="questions-list">
+    <!-- Questions will be added dynamically -->
+  </ul>
+
+</div>
+
+<script>
+  function logout() {
+    alert("Logging out...");
+    window.location.href = "index.html";
+  }
+  function clearLeaderboard() {
+    let confirmPassword = prompt("Enter Admin Password to Confirm:");
+    const correctPassword = "admin123"; // Same as login password
+
+    if (confirmPassword !== correctPassword) {
+      alert("Incorrect Password! Leaderboard not cleared.");
+      return;
+    }
+
+    if (confirm("Are you sure you want to delete all leaderboard entries?")) {
+      localStorage.removeItem("leaderboard");
+      alert("Leaderboard cleared successfully!");
+      location.reload(); // Refresh the page
+    }
+  }
+
+</script>
+
+<script src="admin.js"></script>
+</body>
+</html>

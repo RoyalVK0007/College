@@ -1,0 +1,61 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 400px;
+    background: white;
+    padding: 20px;
+    margin: 50px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Heading */
+h1, h2 {
+    color: #333;
+}
+
+/* Buttons */
+button, .start-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    margin: 10px 0;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+button:hover, .start-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Logout Button */
+#logout-btn {
+    float: right;
+    background-color: red;
+}
+
+#logout-btn:hover {
+    background-color: darkred;
+}
+
+/* Input Fields */
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
